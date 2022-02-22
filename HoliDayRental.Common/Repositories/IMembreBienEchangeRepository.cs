@@ -6,7 +6,7 @@ namespace HoliDayRental.Common.Repositories
 {
     public interface IMembreBienEchangeRepository<TMembreBienEchange> : IRepository<TMembreBienEchange, int>
     {
-        public IEnumerable<TMembreBienEchange> GetByBienEchange(int idBien);
+        public IEnumerable<TMembreBienEchange> Get(DateTime DateDebEchange);
     }
 }
 
