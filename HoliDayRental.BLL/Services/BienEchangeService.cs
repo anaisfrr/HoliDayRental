@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using HoliDayRental.Common.Repositories;
+using HoliDayRental.BLL.Handlers;
+using System.Linq;
 
 namespace HoliDayRental.BLL.Services
 {
@@ -18,32 +20,32 @@ namespace HoliDayRental.BLL.Services
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _bienEchangeRepository.Delete(id);
         }
 
         public Entities.BienEchange Get(int id)
         {
-            throw new NotImplementedException();
+            return _bienEchangeRepository.Get(id).ToBLL();
         }
 
         public IEnumerable<Entities.BienEchange> Get()
         {
-            throw new NotImplementedException();
+            return _bienEchangeRepository.Get().Select(c => c.ToBLL());
         }
 
         public IEnumerable<Entities.BienEchange> GetByMembreId(int membre_id)
         {
-            throw new NotImplementedException();
+            return _bienEchangeRepository.GetByMembreId(membre_id).Select(c => c.ToBLL());
         }
 
         public int Insert(Entities.BienEchange entity)
         {
-            throw new NotImplementedException();
+            return _bienEchangeRepository.Insert(entity.ToDAL());
         }
 
         public void Update(int id, Entities.BienEchange entity)
         {
-            throw new NotImplementedException();
+            _bienEchangeRepository.Update(id, entity.ToDAL());
         }
     }
 }

@@ -1,14 +1,16 @@
 ﻿using HoliDayRental.BLL.Entities;
+using HoliDayRental.BLL.Handlers;
 using HoliDayRental.Common.Repositories;
 using HoliDayRental.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using Membre = HoliDayRental.DAL.Entities.Membre;
+//using Membre = HoliDayRental.DAL.Entities.Membre;
 
 namespace HoliDayRental.BLL.Services
 {
-    public class MembreService : IMembreRepository<Membre>
+    public class MembreService : IMembreRepository<BLL.Entities.Membre>
     {
         private readonly IMembreRepository<DAL.Entities.Membre> _membreRepository;
 
@@ -18,32 +20,32 @@ namespace HoliDayRental.BLL.Services
         }
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _membreRepository.Delete(id);
         }
 
-        public Membre Get(int id)
+        public Entities.Membre Get(int id)
         {
-            throw new NotImplementedException();
+            return _membreRepository.Get(id).ToBLL();
         }
 
-        public IEnumerable<Membre> Get()
+        public IEnumerable<Entities.Membre> Get()
         {
-            throw new NotImplementedException();
+            return _membreRepository.Get().Select(c => c.ToBLL());
         }
 
-        public IEnumerable<Membre> GetByBienEchange(int idBien)
+        public IEnumerable<Entities.Membre> GetByBienEchange(int idBien)
         {
-            throw new NotImplementedException();
+            return _membreRepository.GetByBienEchange(idBien).Select(c => c.ToBLL());
         }
 
-        public int Insert(Membre entity)
+        public int Insert(Entities.Membre entity)
         {
-            throw new NotImplementedException();
+            return _membreRepository.Insert(entity.ToDAL());
         }
 
-        public void Update(int id, Membre entity)
+        public void Update(int id, Entities.Membre entity)
         {
-            throw new NotImplementedException();
+            _membreRepository.Update(id, entity.ToDAL());
         }
     }
 }

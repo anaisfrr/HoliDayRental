@@ -24,7 +24,7 @@ namespace HoliDayRental.BLL.Entities
         public string Longitude { get; set; }
         public int idMembre { get; set; }
         public DateTime DateCreation { get; set; }
-        public BienEchange(int id, string tit, string descCourte, string descLong, int nombrePerson, int pays, string ville, string numero, string codePostal, string photo, bool assuaranceObligatoire, bool Enabled, DateTime disabledDate, string latitude, string longitude, int idMemb, DateTime dateCreation)
+        public BienEchange(int id, string tit, string descCourte, string descLong, int nombrePerson, int pays, string ville, string numero, string codePostal, string photo, bool assuranceObligatoire, bool Enabled, DateTime disabledDate, string latitude, string longitude, int idMemb, DateTime dateCreation)
         {
             idBien = id;
             titre = tit;
@@ -37,7 +37,7 @@ namespace HoliDayRental.BLL.Entities
             Numero = numero;
             CodePostal = codePostal;
             Photo = photo;
-            AssuranceObligatoire = AssuranceObligatoire;
+            AssuranceObligatoire = assuranceObligatoire;
             isEnabled = Enabled;
             DisabledDate = disabledDate;
             Latitude = latitude;

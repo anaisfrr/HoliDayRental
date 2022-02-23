@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using HoliDayRental.DAL.Entities;
-using OptionsBien = HoliDayRental.DAL.Entities.OptionsBien;
+//using OptionsBien = HoliDayRental.DAL.Entities.OptionsBien;
+using HoliDayRental.BLL.Handlers;
+using System.Linq;
 
 namespace HoliDayRental.BLL.Services
 {
-    public class OptionsBienService : IOptionsBienRepository<OptionsBien>
+    public class OptionsBienService : IOptionsBienRepository<BLL.Entities.OptionsBien>
     {
         private readonly IOptionsBienRepository<DAL.Entities.OptionsBien> _optionsBienRepository;
 
@@ -18,32 +20,32 @@ namespace HoliDayRental.BLL.Services
         }
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _optionsBienRepository.Delete(id);
         }
 
-        public OptionsBien Get(int id)
+        public Entities.OptionsBien Get(int id)
         {
-            throw new NotImplementedException();
+            return _optionsBienRepository.Get(id).ToBLL();
         }
 
-        public IEnumerable<OptionsBien> Get()
+        public IEnumerable<Entities.OptionsBien> Get()
         {
-            throw new NotImplementedException();
+            return _optionsBienRepository.Get().Select(c => c.ToBLL());
         }
 
-        public IEnumerable<OptionsBien> GetByBienEchange(int idBien)
+        public IEnumerable<Entities.OptionsBien> GetByBienEchange(int idBien)
         {
-            throw new NotImplementedException();
+            return _optionsBienRepository.GetByBienEchange(idBien).Select(c => c.ToBLL());
         }
 
-        public int Insert(OptionsBien entity)
+        public int Insert(Entities.OptionsBien entity)
         {
-            throw new NotImplementedException();
+            return _optionsBienRepository.Insert(entity.ToDAL());
         }
 
-        public void Update(int id, OptionsBien entity)
+        public void Update(int id, Entities.OptionsBien entity)
         {
-            throw new NotImplementedException();
+            _optionsBienRepository.Update(id, entity.ToDAL());
         }
     }
 }

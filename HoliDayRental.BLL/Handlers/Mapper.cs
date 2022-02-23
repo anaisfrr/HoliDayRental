@@ -109,5 +109,34 @@ namespace HoliDayRental.BLL.Handlers
                 Valeur = entity.Valeur
             };
         }
+
+        public static B.AvisMembreBien ToBLL(this D.AvisMembreBien entity)
+        {
+            if (entity == null) return null;
+            return new B.AvisMembreBien(
+                entity.idAvis,
+                entity.note,
+                entity.message,
+                entity.idMembre,
+                entity.idBien,
+                entity.DateAvis,
+                entity.Approuve
+                );
+        }
+
+        public static D.AvisMembreBien ToDAL(this B.AvisMembreBien entity)
+        {
+            if (entity == null) return null;
+            return new D.AvisMembreBien
+            {
+                idAvis = entity.idAvis,
+                note = entity.note,
+                message = entity.message,
+                idMembre = entity.idMembre,
+                idBien = entity.idBien,
+                DateAvis = entity.DateAvis,
+                Approuve = entity.Approuve,
+            };
+        }
     }
 }
