@@ -61,48 +61,48 @@ namespace HoliDayRental.DAL.Handlers
                 Valide = (bool)record[nameof(MembreBienEchange.Valide)],
             };
         }
-        //public static Options Options(IDataRecord record)
-        //{
-        //    if (record is null) return null;
-        //    return new Options
-        //    {
-        //        idOption = (int)record[nameof(Options.idOption)],
-        //        Libelle = (string)record[nameof(Options.Libelle)],
-        //    };
-        //}
-        //public static OptionsBien OptionsBien(IDataRecord record)
-        //{
-        //    if (record is null) return null;
-        //    return new OptionsBien
-        //    {
-        //        idOption = (int)record[nameof(OptionsBien.idOption)],
-        //        idBien = (int)record[nameof(OptionsBien.idBien)],
-        //        Valeur = (string)record[nameof(OptionsBien.Valeur)],
-        //    };
-        //}
-        //public static AvisMembreBien AvisMembreBien(IDataRecord record)
-        //{
-        //    if (record is null) return null;
-        //    return new AvisMembreBien
-        //    {
-        //        idAvis = (int)record[nameof(AvisMembreBien.idAvis)],
-        //        note = (int)record[nameof(AvisMembreBien.note)],
-        //        message = (string)record[nameof(AvisMembreBien.message)],
-        //        idMembre = (int)record[nameof(AvisMembreBien.idMembre)],
-        //        idBien = (int)record[nameof(AvisMembreBien.idBien)],
-        //        DateAvis = (DateTime)record[nameof(AvisMembreBien.DateAvis)],
-        //        Approuve = (bool)record[nameof(AvisMembreBien.Approuve)],
-        //    };
-        //}
-        //public static Pays Pays(IDataRecord record)
-        //{
-        //    if (record is null) return null;
-        //    return new Pays
-        //    {
-        //        idPays = (int)record[nameof(Pays.idPays)],
-        //        Libelle = (string)record[nameof(Pays.Libelle)],
+        public static Options Options(IDataRecord record)
+        {
+            if (record is null) return null;
+            return new Options
+            {
+                idOption = (int)record[nameof(Options.idOption)],
+                Libelle = (string)record[nameof(Options.Libelle)],
+            };
+        }
+        public static OptionsBien OptionsBien(IDataRecord record)
+        {
+            if (record is null) return null;
+            return new OptionsBien
+            {
+                idOption = (int)record[nameof(OptionsBien.idOption)],
+                idBien = (int)record[nameof(OptionsBien.idBien)],
+                Valeur = (string)record[nameof(OptionsBien.Valeur)],
+            };
+        }
+        public static AvisMembreBien AvisMembreBien(IDataRecord record)
+        {
+            if (record is null) return null;
+            return new AvisMembreBien
+            {
+                idAvis = (int)record[nameof(AvisMembreBien.idAvis)],
+                note = (int)record[nameof(AvisMembreBien.note)],
+                message = (string)record[nameof(AvisMembreBien.message)],
+                idMembre = (int)record[nameof(AvisMembreBien.idMembre)],
+                idBien = (int)record[nameof(AvisMembreBien.idBien)],
+                DateAvis = (DateTime)record[nameof(AvisMembreBien.DateAvis)],
+                Approuve = (bool)record[nameof(AvisMembreBien.Approuve)],
+            };
+        }
+        public static Pays Pays(IDataRecord record)
+        {
+            if (record is null) return null;
+            return new Pays
+            {
+                idPays = (int)record[nameof(Pays.idPays)],
+                Libelle = (string)record[nameof(Pays.Libelle)],
 
-        //    };
-        //}
+            };
+        }
     }
 }

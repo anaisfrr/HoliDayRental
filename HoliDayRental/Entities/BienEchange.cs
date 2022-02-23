@@ -23,7 +23,7 @@ namespace HoliDayRental.DAL.Entities
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public int idMembre { get; set; }
-        public string DateCreation { get; set; }
+        public DateTime DateCreation { get; set; }
 
     }
 }
