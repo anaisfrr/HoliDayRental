@@ -16,7 +16,7 @@ namespace HoliDayRental.DAL.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "DELETE FROM [OptionsBien] WHERE [Id] = @id";
+                    command.CommandText = "DELETE FROM [OptionsBien] WHERE [idOption] = @id";
                     SqlParameter p_id = new SqlParameter() { ParameterName = "id", Value = id };
                     command.Parameters.Add(p_id);
                     connection.Open();

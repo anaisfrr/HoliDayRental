@@ -89,5 +89,25 @@ namespace HoliDayRental.BLL.Handlers
                 DateCreation = entity.DateCreation
             };
         }
+        public static B.OptionsBien ToBLL(this D.OptionsBien entity)
+        {
+            if (entity == null) return null;
+            return new B.OptionsBien(
+                entity.idOption,
+                entity.idBien,
+                entity.Valeur
+                );
+        }
+
+        public static D.OptionsBien ToDAL(this B.OptionsBien entity)
+        {
+            if (entity == null) return null;
+            return new D.OptionsBien
+            {
+                idOption = entity.idOption,
+                idBien = entity.idBien,
+                Valeur = entity.Valeur
+            };
+        }
     }
 }

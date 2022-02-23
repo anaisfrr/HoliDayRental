@@ -1,4 +1,5 @@
 ﻿using HoliDayRental.Common.Repositories;
+using HoliDayRental.DAL.Entities;
 using HoliDayRental.DAL.Handlers;
 using System;
 using System.Collections.Generic;

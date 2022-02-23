@@ -1,47 +1,47 @@
 ﻿using HoliDayRental.BLL.Entities;
 using HoliDayRental.Common.Repositories;
-using HoliDayRental.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Membre = HoliDayRental.DAL.Entities.Membre;
+using HoliDayRental.DAL.Entities;
+using OptionsBien = HoliDayRental.DAL.Entities.OptionsBien;
 
 namespace HoliDayRental.BLL.Services
 {
-    public class MembreService : IMembreRepository<Membre>
+    public class OptionsBienService : IOptionsBienRepository<OptionsBien>
     {
-        private readonly IMembreRepository<DAL.Entities.Membre> _membreRepository;
+        private readonly IOptionsBienRepository<DAL.Entities.OptionsBien> _optionsBienRepository;
 
-        public MembreService(IMembreRepository<DAL.Entities.Membre> repository)
+        public OptionsBienService(IOptionsBienRepository<DAL.Entities.OptionsBien> repository)
         {
-            _membreRepository = repository;
+            _optionsBienRepository = repository;
         }
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Membre Get(int id)
+        public OptionsBien Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Membre> Get()
+        public IEnumerable<OptionsBien> Get()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Membre> GetByBienEchange(int idBien)
+        public IEnumerable<OptionsBien> GetByBienEchange(int idBien)
         {
             throw new NotImplementedException();
         }
 
-        public int Insert(Membre entity)
+        public int Insert(OptionsBien entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(int id, Membre entity)
+        public void Update(int id, OptionsBien entity)
         {
             throw new NotImplementedException();
         }
