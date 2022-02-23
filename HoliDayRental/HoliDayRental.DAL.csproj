@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HoliDayRental.Common\HoliDayRental.Common.csproj" />
-    <ProjectReference Include="..\HomeShare\HoliDayRental.csproj" />
   </ItemGroup>
 
 </Project>

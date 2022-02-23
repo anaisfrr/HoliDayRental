@@ -45,7 +45,7 @@ namespace HoliDayRental.DAL.Handlers
                 Latitude = (string)record[nameof(BienEchange.Latitude)],
                 Longitude = (string)record[nameof(BienEchange.Longitude)],
                 idMembre = (int)record[nameof(BienEchange.idMembre)],
-                DateCreation = (string)record[nameof(BienEchange.DateCreation)]
+                DateCreation = (DateTime)record[nameof(BienEchange.DateCreation)]
             };
         }
         public static MembreBienEchange ToMembreBienEchange(IDataRecord record)
@@ -61,7 +61,7 @@ namespace HoliDayRental.DAL.Handlers
                 Valide = (bool)record[nameof(MembreBienEchange.Valide)],
             };
         }
-        public static Options Options(IDataRecord record)
+        public static Options ToOptions(IDataRecord record)
         {
             if (record is null) return null;
             return new Options
@@ -70,7 +70,7 @@ namespace HoliDayRental.DAL.Handlers
                 Libelle = (string)record[nameof(Options.Libelle)],
             };
         }
-        public static OptionsBien OptionsBien(IDataRecord record)
+        public static OptionsBien ToOptionsBien(IDataRecord record)
         {
             if (record is null) return null;
             return new OptionsBien
@@ -80,7 +80,7 @@ namespace HoliDayRental.DAL.Handlers
                 Valeur = (string)record[nameof(OptionsBien.Valeur)],
             };
         }
-        public static AvisMembreBien AvisMembreBien(IDataRecord record)
+        public static AvisMembreBien ToAvisMembreBien(IDataRecord record)
         {
             if (record is null) return null;
             return new AvisMembreBien
@@ -94,7 +94,7 @@ namespace HoliDayRental.DAL.Handlers
                 Approuve = (bool)record[nameof(AvisMembreBien.Approuve)],
             };
         }
-        public static Pays Pays(IDataRecord record)
+        public static Pays ToPays(IDataRecord record)
         {
             if (record is null) return null;
             return new Pays

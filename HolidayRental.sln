@@ -11,15 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{C55B8CEC-6A7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{954FF131-419F-4CD4-8046-F7885DF15F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.DAL", "HoliDayRental\HoliDayRental.DAL.csproj", "{3FF25EEE-E047-43D1-B34B-83F1092CE4D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.DAL", "HoliDayRental\HoliDayRental.DAL.csproj", "{3FF25EEE-E047-43D1-B34B-83F1092CE4D0}"
 	ProjectSection(ProjectDependencies) = postProject
-		{86EA0D03-F04B-422D-A252-2143E5B468E0} = {86EA0D03-F04B-422D-A252-2143E5B468E0}
 		{8020D524-9DA0-42F3-906F-C726363F865F} = {8020D524-9DA0-42F3-906F-C726363F865F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.Common", "HoliDayRental.Common\HoliDayRental.Common.csproj", "{4F3F4690-6625-4903-BA69-0D62587679B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.Common", "HoliDayRental.Common\HoliDayRental.Common.csproj", "{4F3F4690-6625-4903-BA69-0D62587679B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.BLL", "HoliDayRental.BLL\HoliDayRental.BLL.csproj", "{86EA0D03-F04B-422D-A252-2143E5B468E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.BLL", "HoliDayRental.BLL\HoliDayRental.BLL.csproj", "{86EA0D03-F04B-422D-A252-2143E5B468E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3FF25EEE-E047-43D1-B34B-83F1092CE4D0} = {3FF25EEE-E047-43D1-B34B-83F1092CE4D0}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP", "ASP", "{7254E060-4F4F-4F5D-AA03-80466619DF67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

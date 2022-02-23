@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace HoliDayRental.DAL
+namespace HoliDayRental.DAL.Entities
+
 {
     public class Membre
     {
