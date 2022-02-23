@@ -30,7 +30,7 @@ namespace HoliDayRental.DAL.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [Id],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre] WHERE [Id] = @id";
+                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre] WHERE [Id] = @id";
                     SqlParameter p_id = new SqlParameter() { ParameterName = "id", Value = id };
                     command.Parameters.Add(p_id);
                     connection.Open();
@@ -47,7 +47,7 @@ namespace HoliDayRental.DAL.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [Id],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre]";
+                    command.CommandText = "SELECT [idMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre]";
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToMembre(reader);

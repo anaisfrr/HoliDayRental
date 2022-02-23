@@ -31,7 +31,7 @@ namespace HoliDayRental.DAL.Repositories
                 {
                     using (SqlCommand command = connection.CreateCommand())
                     {
-                    command.CommandText = "SELECT [idBien],[titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[isEnabled],[DisabledDate],[Latitude],[Longitude],[idMembre],[Datecreation] FROM [BienEchange] WHERE [Id] = @id";
+                    command.CommandText = "SELECT [idBien],[titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[isEnabled],[DisabledDate],[Latitude],[Longitude],[idMembre],[Datecreation] FROM [BienEchange] WHERE [idBien] = @id";
                         SqlParameter p_id = new SqlParameter() { ParameterName = "id", Value = id };
                         command.Parameters.Add(p_id);
                         connection.Open();
@@ -62,7 +62,7 @@ namespace HoliDayRental.DAL.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idBien],[titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[isEnabled],[DisabledDate],[Latitude],[Longitude],[idMembre],[Datecreation] FROM [Membre] WHERE [Membre_Id=@membre";
+                    command.CommandText = "SELECT [idBien],[titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[isEnabled],[DisabledDate],[Latitude],[Longitude],[idMembre],[Datecreation] FROM [Membre] WHERE [Membre_Id]=@membre";
                     SqlParameter p_membre = new SqlParameter("membre", membre_id);
                     command.Parameters.Add(p_membre);
                     connection.Open();

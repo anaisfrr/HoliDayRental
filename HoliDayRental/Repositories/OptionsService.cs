@@ -56,7 +56,18 @@ namespace HoliDayRental.DAL.Repositories
 
         public IEnumerable<Options> GetByBienEchange(int idBien)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT [idOption],[Libelle] FROM [BienEchange] WHERE [idBien]=@bienEchange";
+                    SqlParameter p_bienEchange = new SqlParameter("bienEchange", idBien);
+                    command.Parameters.Add(p_bienEchange);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read()) yield return Mapper.ToOptions(reader);
+                }
+            }
         }
 
         public int Insert(Options entity)
