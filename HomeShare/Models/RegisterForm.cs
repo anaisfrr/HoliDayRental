@@ -25,7 +25,7 @@ namespace HoliDayRental.Models
         [DisplayName("Pays : ")]
         public int Pays { get; set; }
 
-        [Required(ErrorMessage = "Le téléphone est obligatoire.")]
+        [Required(ErrorMessage = "Le numéro de téléphone est obligatoire.")]
         [DisplayName("Téléphone : ")]
         public string Telephone { get; set; }
 

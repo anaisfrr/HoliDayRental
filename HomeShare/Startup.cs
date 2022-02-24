@@ -1,3 +1,6 @@
+using HoliDayRental.BLL.Entities;
+using HoliDayRental.BLL.Services;
+using HoliDayRental.Handlers;
 using HoliDayRental.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +38,11 @@ namespace HoliDayRental
             });      //permet de configurer les sessions pour mon application
 
             services.AddControllersWithViews();
+
+            services.AddHttpContextAccessor();
+            services.AddScoped<RegisterManager>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
