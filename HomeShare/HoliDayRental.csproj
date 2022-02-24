@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HolidayRental.Business\HolidayRental.Business.csproj" />
     <ProjectReference Include="..\HoliDayRental.Common\HoliDayRental.Common.csproj" />
   </ItemGroup>
 

@@ -14,8 +14,8 @@ namespace HoliDayRental.Handlers
             if (entity is null) return null;
             return new MembreListItem
             {
-                idMembre = entity.Nom,
-                Nom = entity.Last_Name,
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
                 Prenom = entity.Prenom,
                 Email = entity.Email,
                 Pays = entity.Pays,
@@ -29,8 +29,8 @@ namespace HoliDayRental.Handlers
             if (entity == null) return null;
             return new MembreDetails
             {
-                idMembre = entity.Nom,
-                Nom = entity.Last_Name,
+                idMembre = entity.idMembre,
+                Nom = entity.Nom,
                 Prenom = entity.Prenom,
                 Email = entity.Email,
                 Pays = entity.Pays,

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HoliDayRental.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace HoliDayRental.Handlers
 {
     public class RegisterManager
     {
-        private readonly IRegister _register;
+        private readonly ISession _register;
         public RegisterManager(IHttpContextAccessor httpContextAccessor)
         {
-            _register = httpContextAccessor.HttpContext.Register;
+            _register = httpContextAccessor.HttpContext.Session;
         }
 
         public bool IsConnected { get { return _register.GetString("user") != null; } }
@@ -39,17 +40,7 @@ namespace HoliDayRental.Handlers
                 _register.SetString(nameof(ValeurText), value);
             }
         }
-        public byte[] MonTableauDeByte
-        {
-            get
-            {
-                return _register.Get(nameof(MonTableauDeByte));
-            }
-            set
-            {
-                _register.Set(nameof(MonTableauDeByte), value);
-            }
-        }
+
 
         public void SetUser(RegisterForm form)
         {

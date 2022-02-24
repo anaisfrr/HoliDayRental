@@ -1,11 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>HolidayRental.BLL</AssemblyName>
+    <RootNamespace>HolidayRental.BLL</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HoliDayRental.Common\HoliDayRental.Common.csproj" />
     <ProjectReference Include="..\HolidayRental.DALL\HolidayRental.DALL.csproj" />
   </ItemGroup>
 
