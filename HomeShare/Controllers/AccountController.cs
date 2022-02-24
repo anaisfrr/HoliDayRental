@@ -21,7 +21,7 @@ namespace HoliDayRental.Controllers
         }
         public IActionResult Index()
         {
-            return View();// _logger.Get().Select(s => s.ToListItem()));
+            return View();
         }
 
         public IActionResult Register()

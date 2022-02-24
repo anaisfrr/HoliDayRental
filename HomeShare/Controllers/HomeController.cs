@@ -1,4 +1,5 @@
-﻿using HoliDayRental.Infrastructure.Helpers;
+﻿using HoliDayRental.Handlers;
+using HoliDayRental.Infrastructure.Helpers;
 using HoliDayRental.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ namespace HoliDayRental.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IHttpContextAccessor _httpContext;
+        private readonly RegisterManager register;
         public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContext )
         {
             _logger = logger; 
